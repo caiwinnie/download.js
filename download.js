@@ -2,7 +2,7 @@
 
 (function(window, document){
 
-  // click a[download]
+  // {h5}: click a[download] 
   function aDownload(url) {
     var a = document.createElement('a')
     if (!('download' in a)){
@@ -24,13 +24,14 @@
 
   // open + saveAs
   function openSaveAs(url) {
-    // open
+    // {others}: open
     var win = window.open(url, '_blank')
 
-    // saveAs
+    // {ie}: saveAs 
     setTimeout(function () {
-    	// 非媒体文件open时已调下载框
+    	// 非浏览器可查看的文件 open时已调下载框
       if (url.match(/(.jpg|.jpeg|.png|.gif|.bmp|.webp|.txt|.md|.js|.json|.css|.html|.htm|.xml|.svg)$/i)) {
+      	// 不一定成功，但已open做为降级处理
         win.document.execCommand('saveAs') 
         // && win.close() // open的win execCommand都返回false
       }
