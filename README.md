@@ -11,6 +11,6 @@ import download from './path/to/download.js'
 ```
 
 ## usage
-```
+```javascript
 download('url.file')
 ```
