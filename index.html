@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>download.js</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<script src="download.js"></script>
 </head>
 <body>
-	<script src="download.js"></script>
-	<input id="input" value="img.jpg">
-	<!-- https://www.baidu.com/img/baidu_jgylogo3.gif -->
-	<button onclick="download(input.value)">download</button>
+
+	<select onchange="input.value=a.href=this.value">
+		<option>选择文件</option>
+		<option>files/file.jpg</option>
+		<option>files/file.zip</option>
+		<option value="https://www.baidu.com/img/baidu_jgylogo3.gif">baidu_jgylogo3.gif</option>
+	</select>
+	<input id="input" value="">
+
+	<hr>
+	<button onclick="download(input.value)">download.js</button>
+
+	<hr>
+	<a id="a" href="" download="" target="_blank">a[download]</a>
+
+	<hr>
+	<button onclick="win=window.open(input.value, '_blank')">open</button> +
+	<button onclick="win.document.execCommand('saveAs')">saveAs</button>
 
 </body>
 </html>

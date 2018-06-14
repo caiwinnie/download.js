@@ -2,7 +2,7 @@
 
 (function(window, document){
 
-  // a[download]
+  // click a[download]
   function aDownload(url) {
     var a = document.createElement('a')
     if (!('download' in a)){
@@ -15,30 +15,28 @@
 
     var event = document.createEvent('MouseEvents')
     event.initEvent('click')
-
-    // 通过 click **同时**触发 click ，可能会被无视
     setTimeout(function () {
-      a.dispatchEvent(event)
-    }, 46)
+			a.dispatchEvent(event)
+		}, 41}
 
     return true
   }
 
-  // open saveAs
-  function winOpen(url) {
+  // open + saveAs
+  function openSaveAs(url) {
     // open
     var win = window.open(url, '_blank')
 
     // saveAs
     setTimeout(function () {
-      if (url.match(/(.jpg|.jpeg|.png|.gif|.bmp|.txt|.js|.css|.html|.htm)$/i)) {
+      if (url.match(/(.jpg|.jpeg|.png|.gif|.bmp|.webp|.txt|.md|.js|.json|.css|.html|.htm|.xml|.svg)$/i)) {
         win.document.execCommand('saveAs')
       }
-    }, 46)
+    }, 41)
   }
 
   function download(url) {
-    aDownload(url) || winOpen(url)
+    aDownload(url) || openSaveAs(url)
   }
 
   if (typeof module != 'undefined') {
