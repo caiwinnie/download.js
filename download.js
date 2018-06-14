@@ -13,7 +13,13 @@
     a.target =  '_blank'
     a.href =  url
 
-    a.click()
+    var event = document.createEvent('MouseEvents')
+    event.initEvent('click')
+    a.dispatchEvent(event)
+
+    // document.body.appendChild(a) // {firefox}
+    // a.click()
+    // document.body.removeChild(a)
 
     return true
   }
