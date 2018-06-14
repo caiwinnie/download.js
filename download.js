@@ -1,3 +1,5 @@
+/*! @preserve https://github.com/wusfen/download.js */
+
 (function(window, document){
 
   // a[download]
