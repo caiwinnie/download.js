@@ -15,7 +15,7 @@
 
     var event = document.createEvent('MouseEvents')
     event.initEvent('click')
-    setTimeout(function () {
+    setTimeout(function () { // 不延迟曾遇无效
 			a.dispatchEvent(event)
 		}, 41}
 
@@ -29,8 +29,10 @@
 
     // saveAs
     setTimeout(function () {
+    	// 非媒体文件open时已调下载框
       if (url.match(/(.jpg|.jpeg|.png|.gif|.bmp|.webp|.txt|.md|.js|.json|.css|.html|.htm|.xml|.svg)$/i)) {
-        win.document.execCommand('saveAs')
+        win.document.execCommand('saveAs') 
+        // && win.close() // open的win execCommand都返回false
       }
     }, 41)
   }
