@@ -12,5 +12,7 @@ import download from './path/to/download.js'
 
 ## usage
 ```javascript
-download('url.file')
+download('file.ext')
+
+download('file.ext', 'save2.name')
 ```

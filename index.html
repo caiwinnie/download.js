@@ -13,10 +13,11 @@
 		<option>files/file.zip</option>
 		<option value="https://www.baidu.com/img/baidu_jgylogo3.gif">baidu_jgylogo3.gif</option>
 	</select>
-	<input id="input" value="">
+	<input id="input" placeholder="file">
+	<input id="filename" placeholder="to filename">
 
 	<hr>
-	<button onclick="download(input.value)">download.js</button>
+	<button onclick="download(input.value, filename.value)">download.js</button>
 
 	<hr>
 	<a id="a" href="" download="" target="_blank">a[download]</a>
