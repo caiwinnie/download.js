@@ -3,13 +3,13 @@
 (function(window, document){
 
   // {h5}: click a[download] 
-  function aDownload(url, filename) {
+  function aDownload(url, rename) {
     var a = document.createElement('a')
     if (!('download' in a)){
       return
     }
 
-    a.download = filename || ''
+    a.download = rename || ''
     a.target =  '_blank'
     a.href =  url
 
@@ -40,8 +40,8 @@
     }, 41)
   }
 
-  function download(url, filename) {
-    aDownload(url, filename) || openSaveAs(url)
+  function download(url, rename) {
+    aDownload(url, rename) || openSaveAs(url)
   }
 
   if (typeof module != 'undefined') {

@@ -14,5 +14,5 @@ import download from './path/to/download.js'
 ```javascript
 download('file.ext')
 
-download('file.ext', 'save2.name')
+download('file.ext', 'rename.txt')
 ```
